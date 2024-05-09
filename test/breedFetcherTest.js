@@ -25,7 +25,7 @@ describe('fetchBreedDescription', () => {
       const expectedDesc = "Breed Sakura not found";
 
       // compare returned description
-      assert.equal(expectedDesc, desc);
+      assert.equal(expectedDesc, desc.trim());
 
       done();
     });
