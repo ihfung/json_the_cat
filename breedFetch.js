@@ -6,6 +6,7 @@ needle.get('https://api.thecatapi.com/v1/breeds/search?q=Siberian', (error, resp
     console.error('Error:', error);
     
   }
-  console.log('body:', body); // Print the HTML for the Google homepage.
+  console.log('body:', body);
   console.log(typeof body);
 });
+
