@@ -12,11 +12,13 @@ const fetchBreedDescription = function(breedName, callback) {
       //console.log(body[0].description); //get the description of the breed from the object
       //Write code to output an appropriate message if the requested breed is not found.
       if (body.length === 0) { //if the body is empty, the breed is not found
-        callback(`Breed ${breedName} not found`, null); //call the callback function with the error message
+        callback(null, `Breed ${breedName} not found`); //call the callback function with the error message and de
     
       }
-      const desc = body[0].description; //get the description of the breed from the object
-      callback(null, desc); //call the callback function with the description
+      if (body.length > 0) {
+        const desc = body[0].description; //get the description of the breed from the object
+        callback(null, desc); //call the callback function with the description
+      }
     }
   });
 };
