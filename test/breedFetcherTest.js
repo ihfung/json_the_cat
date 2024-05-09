@@ -17,4 +17,16 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+  
+  it('returns an error message for an invalid breed, via callback', (done) => {
+    fetchBreedDescription('Sakura', (err, desc) => {
+      // we expect an error for this scenario
+      assert.equal(err, 'Breed not found');
+      
+      // compare returned description
+      assert.equal(null, desc);
+
+      done();
+    });
+  });
 });
